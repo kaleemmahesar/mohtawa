@@ -33,8 +33,8 @@ const Footer = () => {
                             </ul>
                         </div>
                     </Col>
-                    <Col span={24}>
-                        <p>© TM 2024. AlIl rights reserved.<a href=''>Privacy Policy</a></p>
+                    <Col span={24} className='copyright'>
+                        <p align='center'>© TM 2024. AlIl rights reserved.<a href=''>Privacy Policy</a></p>
                     </Col>
                 </Row>
             </Container>
