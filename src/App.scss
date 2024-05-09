@@ -93,6 +93,7 @@ body {
         font-size: 20px;
         color: #fff;
         margin-bottom: 15px;
+        font-family: 'Poppins', sans-serif !important;
         &::placeholder {
             color: #9D9D9D;
             opacity: 1;
@@ -148,6 +149,30 @@ body {
         font-size: 40px;
         font-weight: 500;
         margin: 0 0 40px;
+    }
+    .about-intro {
+        padding-bottom: 100px;
+        h2 {
+            font-size: 48px;
+            font-weight: normal;
+            margin: 0;
+            text-align: left;
+            b {
+                font-weight: 700;
+            }
+        }
+        h3 {
+            margin: 0;
+            text-align: left;
+            font-size: 32px;
+            span {
+                font-weight: 700;
+                color: #C3F500;
+            }
+        }
+    }
+    img.metalogo {
+        max-width: 127px;
     }
 }
 .content-slider {
@@ -236,4 +261,45 @@ body {
             max-width: 100%;
         }
     }
+}
+.contactus-area {
+    padding-bottom: 60px;
+    .ant-col-3 {
+        display: flex;
+    }
+    h2 {
+        font-size: 30px;
+        font-weight: normal;
+        span {
+            display: block;
+            font-weight: 600;
+            font-size: 42px;
+        }
+    }
+    .ant-form-horizontal {
+        .ant-form-item-label {
+            position: absolute;
+            left: 28px;
+            z-index: 9;
+            top: 28px;
+            font-weight: 600;
+            > label {
+                color: white;
+            }
+        }
+        input.ant-input {
+            height: 137px;
+            padding: 42px 32px 32px;
+            margin-bottom: 0;
+            border-radius: 45px;
+        }
+        button.ant-btn-primary {
+            height: 113px;
+            padding: 16px 39px;
+            border-radius: 32px;
+        }
+    }
+}
+#contact_phone {
+    margin-left: 15px;
 }

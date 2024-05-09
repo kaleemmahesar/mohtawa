@@ -5,6 +5,7 @@ import HeroBanner from '../components/heroBanner/HeroBanner'
 import Partners from '../components/partnerSection/Partners'
 import ContentSlider from '../components/contentSlider/ContentSlider'
 import ComingSoon from '../components/comingSoon/ComingSoon'
+import ContactUs from '../components/contactUs/ContactUs'
 
 const Home = () => {
     return (
@@ -12,7 +13,7 @@ const Home = () => {
             <HeroBanner />
             <Partners />
             <ContentSlider />
-            <ComingSoon />
+            <ContactUs />
         </>
     )
 }
