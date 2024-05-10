@@ -2,7 +2,7 @@ import React from 'react'
 import Container from '../container/Container'
 import logo from '../../assets/img/icons/meta_logo.svg'
 import clientsLogos from '../../assets/img/clients-logos.svg'
-import partnerimg1 from '../../assets/img/img2.png'
+import partnerimg1 from '../../assets/img/introimg.png'
 import { Col, Row } from 'antd';
 
 const Partners = () => {
@@ -10,10 +10,10 @@ const Partners = () => {
         <div className='partners-area'>
             <Container>
                 <Row className='about-intro'>
-                    <Col span={9}>
+                    <Col span={8}>
                         <img src={partnerimg1} alt='footer logo' />
                     </Col>
-                    <Col span={15}>
+                    <Col span={15} offset={1}>
                         <h2>We’re an <b>authentic</b> cultural content platform</h2>
                         <h3>Dedicated to empowering creators from the <span>MENA</span> region to publish, showcase, and monetize their content</h3>
                     </Col>
