@@ -1,6 +1,6 @@
 import React from 'react'
 import Container from '../container/Container'
-import { Col, Row } from 'antd';
+import { Col, Row } from 'react-bootstrap';
 import logo from '../../assets/img/White-logo.svg'
 import instaGram from '../../assets/img/icons/Instagram - Negative.png'
 import discard from '../../assets/img/icons/Group 1707478963.png'
@@ -13,7 +13,7 @@ const Footer = () => {
         <div className='footer'>
             <Container>
                 <Row>
-                    <Col span={24}>
+                    <Col lg={12} className='ant-cols'>
                         <div className='footer-logo'>
                             <img src={logo} alt='footer logo' />
                         </div>
@@ -33,7 +33,7 @@ const Footer = () => {
                             </ul>
                         </div>
                     </Col>
-                    <Col span={24} className='copyright'>
+                    <Col lg={12} className='copyright ant-cols'>
                         <p align='center'>© TM 2024. AlIl rights reserved.<a href=''>Privacy Policy</a></p>
                     </Col>
                 </Row>

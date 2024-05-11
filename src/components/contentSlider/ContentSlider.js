@@ -1,6 +1,6 @@
 import React from 'react'
 import Container from '../container/Container'
-import { Col, Row } from 'antd';
+import { Col, Row } from 'react-bootstrap';
 import ReactPlayer from 'react-player';
 import slide1 from '../../assets/img/slide1.png'
 import slide2 from '../../assets/img/slide2.png'
@@ -86,10 +86,10 @@ const ContentSlider = () => {
         <div className='content-slider'>
             <Container>
                 <Row>
-                    <Col span={24}>
+                    <Col lg={12}>
                         <h2>Content <span>Collaborations</span></h2>
                     </Col>
-                    <Col span={24}>
+                    <Col lg={12}>
                         <Swiper
                             modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
                             spaceBetween={24}
@@ -97,8 +97,19 @@ const ContentSlider = () => {
                             pagination={{ clickable: true }}
                             scrollbar={{ draggable: true }}
                             autoplay={{
-                                delay: 1500,
+                                delay: 2500,
                                 disableOnInteraction: false,
+                            }}
+                            breakpoints={{
+                                100: {
+                                  slidesPerView: 1,
+                                },
+                                768: {
+                                  slidesPerView: 1.5,
+                                },
+                                1200: {
+                                    slidesPerView: 2.65,
+                                },
                             }}
                         >
                             <SwiperSlide>

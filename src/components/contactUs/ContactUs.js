@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Checkbox, Form, Input } from 'antd';
-import { Col, Row } from 'antd';
+import { Col, Row } from 'react-bootstrap';
 import Container from '../container/Container'
 import emailicon from '../../assets/img/icons/email_icon.svg'
 import phoneicon from '../../assets/img/icons/phone_icon.svg'
@@ -22,10 +22,10 @@ const ContactUs = () => {
         <div className='contactus-area'>
             <Container>
                 <Row>
-                    <Col span={3}>
+                    <Col lg={2}>
                         <h2>Contact <span>Us</span></h2>
                     </Col>
-                    <Col span={11}>
+                    <Col span={5}>
                         <Form
                             name="contact_email"
                             onFinish={onFinishEmail}
@@ -50,7 +50,7 @@ const ContactUs = () => {
                             </Button>
                         </Form>
                     </Col>
-                    <Col span={10}>
+                    <Col lg={5}>
                     <Form
                             name="contact_phone"
                             onFinish={onFinishPhone}

@@ -7,6 +7,7 @@ import ContentSlider from '../components/contentSlider/ContentSlider'
 import ComingSoon from '../components/comingSoon/ComingSoon'
 import ContactUs from '../components/contactUs/ContactUs'
 
+
 const Home = () => {
     return (
         <>
