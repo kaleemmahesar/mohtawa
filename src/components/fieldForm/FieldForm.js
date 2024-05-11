@@ -128,7 +128,7 @@ const FieldForm = ({ formname }) => {
                     },
                 ]}
             >
-                <Input placeholder="Sample@gmail.com" />
+                <Input placeholder="Email Address" />
             </Form.Item>
             <Button type="primary" htmlType="submit">Secure Your Spot</Button>
         </Form>
