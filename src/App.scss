@@ -114,7 +114,8 @@ img {
                 display: flex;
                 margin: 0;
                 padding: 0;
-                max-width: 300px;
+                max-width: 320px;
+                min-width: 320px;
                 flex-wrap: wrap;
                 @media screen and (max-width: 1023px) { 
                     justify-content: center;
