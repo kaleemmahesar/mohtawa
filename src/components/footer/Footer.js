@@ -18,7 +18,7 @@ const Footer = () => {
                             <img src={logo} alt='footer logo' />
                         </div>
                         <div className='footer-text'>
-                            <p>Beautiful, free images gifted by the world’s most generous community of photographers.</p>
+                            <p>We're a platform fueled by community, showcasing the rich tapestry of regional cultures through content created by talented MENA creators.</p>
                         </div>
                         <div className='footer-link'>
                            <p>Community</p>
