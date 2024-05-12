@@ -1,6 +1,6 @@
 import React from 'react'
 import Container from '../container/Container'
-import logo from '../../assets/img/White-logo.svg'
+import logo from '../../assets/img/icons/white-logo.png'
 import {Col, Row} from 'react-bootstrap'
 
 const Header = () => {

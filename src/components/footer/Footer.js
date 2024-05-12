@@ -1,7 +1,7 @@
 import React from 'react'
 import Container from '../container/Container'
 import { Col, Row } from 'react-bootstrap';
-import logo from '../../assets/img/White-logo.svg'
+import logo from '../../assets/img/icons/white-logo.png'
 import instaGram from '../../assets/img/icons/Instagram - Negative.png'
 import discard from '../../assets/img/icons/Group 1707478963.png'
 import tikTok from '../../assets/img/icons/Group 1707478964.png'
@@ -18,7 +18,7 @@ const Footer = () => {
                             <img src={logo} alt='footer logo' />
                         </div>
                         <div className='footer-text'>
-                            <p>We're a platform fueled by community, showcasing the rich tapestry of regional cultures through content created by talented MENA creators </p>
+                            <p>Beautiful, free images gifted by the world’s most generous community of photographers.</p>
                         </div>
                         <div className='footer-link'>
                            <p>Community</p>
