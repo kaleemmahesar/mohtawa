@@ -273,10 +273,11 @@ img {
     h3 {
         font-size: 74px;
         font-weight: 500;
-        margin: 15px 0 25px;
+        margin: 100px 0 25px;
         @media screen and (max-width: 1023px) {
             text-align: center;
             font-size: 32px;
+            margin-top: 40px;
         }
         span {
             color: #0166E2;
