@@ -1,106 +1,35 @@
-// import React, {useState} from 'react';
-// import { Button, Checkbox, Form, Input } from 'antd';
-// import { LockOutlined, UserOutlined } from '@ant-design/icons';
-// // import { useState } from 'rea¿ct';
-
-// const [formData, setFormData] = useState({
-    
-//     email: '',
-  
-//   });
-
-// const onFinish = async (values) => {
-//     console.log('Success:', values);
-//     const data = new FormData();
-//     data.append('email', formData.email);
-
-//     const Sheet_Url="https://script.google.com/macros/s/AKfycbw-sLXsAXBnpcoJx9W8gs0lWYJjSlv9RBbvlYwEnpJPhW6Xbzi_0fZH97yRNGAWkdVPPw/exec"
-//     try {
-//       await fetch(Sheet_Url, {
-//         method: 'POST',
-//         body: data,
-//         muteHttpExceptions: true,
-//       });
-
-//       setFormData({
-       
-//         email: '',
-  
-//       });
-//     } catch (error) {
-//       console.log(error);
-//     }
-// };
-// const onFinishFailed = (errorInfo) => {
-//     console.log('Failed:', errorInfo);
-// };
-
-// const validateEmail = (_, value) => {
-//     if (!value) {
-//         return Promise.resolve(); // Success
-//     }
-//     // Validate email format
-//     if (/^\S+@\S+\.\S+$/.test(value)) {
-//         return Promise.resolve();
-//     }
-//     return Promise.reject('Please input valid email address!');
-// };
-// const FieldForm = ({formname}) => (
-//     <Form
-//         name={formname} 
-//         onFinish={onFinish}
-//         onFinishFailed={onFinishFailed}
-//         autoComplete="off"
-//     >
-//         <Form.Item
-//             name="useremail"
-//             rules={[
-//                 {
-//                     validator: validateEmail,
-//                     trigger: 'onBlur' 
-//                     // required: true,
-//                     // type: "email",
-//                     // message: 'Please input valid email address!',
-//                     // trigger: 'onBlur' 
-//                 },
-//                 // validateTrigger="onBlur"
-//             ]}
-//         >
-//             <Input placeholder="Sample@gmail.com" />
-//         </Form.Item>
-//         <Button type="primary" htmlType="submit">Secure Your Spot</Button>
-//     </Form>
-// );
-// export default FieldForm;
-
-import React, { useState } from 'react';
-import { Button, Form, Input } from 'antd';
+import React, {useState} from 'react';
+import { Form, Input, Button, Modal, Row, Col } from 'antd';
 import axios from 'axios';
 
-const FieldForm = ({ formname }) => {
-    const [useremail, setEmail] = useState('');
+const FieldForm = () => {
+
+    const [form] = Form.useForm();
+    const [showModal, setShowModal] = useState(false);
 
     const onFinish = async (values) => {
-        setEmail(values.useremail);
-       
-            const data = {
-                email: values.useremail
-            }
-            console.log('Data:',data, useremail, values)
-           axios.post('https://sheet.best/api/sheets/860ebffe-b0e8-4d79-ad03-9192df83c83b',data).then((res)=>{
-            console.log('Response:', res);
-            setEmail('');
-           }).catch((err)=>{
-            console.log('Error:',err)
-           })
-           
-    
-        }
+        const data = {
+            email: values.email
+        };
+        
+        axios.post('https://sheet.best/api/sheets/860ebffe-b0e8-4d79-ad03-9192df83c83b', data)
+            .then((res) => {
+                // console.log('Response:', res);
+                setShowModal(true); 
+                form.resetFields();
+            })
+            .catch((err) => {
+                // console.log('Error:', err);
+            });
+    };
+
+    const handleModalClose = () => {
+        setShowModal(false);
+    };
     const onFinishFailed = (errorInfo) => {
         // console.log('Failed:', errorInfo);
-        
     };
- 
+
     const validateEmail = (_, value) => {
         if (!value) {
             return Promise.resolve(); // Success
@@ -113,26 +42,67 @@ const FieldForm = ({ formname }) => {
     };
 
     return (
+        <>
         <Form
-            name={formname}
+            form={form}
             onFinish={onFinish}
             onFinishFailed={onFinishFailed}
             autoComplete="off"
         >
             <Form.Item
-                name="useremail"
+                name="email"
+                label="E-mail"
                 rules={[
                     {
-                        validator: validateEmail,
-                        trigger: 'onBlur'
+                        trigger: 'onBlur',
+                        required: true,
+                        type: 'email',
+                        message: 'Please input valid email address!',
                     },
                 ]}
             >
                 <Input placeholder="Email Address" />
             </Form.Item>
-            <Button type="primary" htmlType="submit">Secure Your Spot</Button>
+            <Form.Item>
+                <Button type="primary" htmlType="submit">
+                    Secure Your Spot
+                </Button>
+            </Form.Item>
         </Form>
+          <Modal
+          title="Thank you for joining Mo7tawa's waitlist"
+          visible={showModal}
+          onCancel={handleModalClose}
+          footer={null}
+      >
+          <p>Invite your friends to join:</p>
+          <Row gutter={[16, 16]}>
+              <Col span={6}>
+                  <a href="link to your Instagram">
+                      <img src="instagram icon" alt="Instagram" />
+                  </a>
+              </Col>
+              <Col span={6}>
+                  <a href="link to your Facebook">
+                      <img src="facebook icon" alt="Facebook" />
+                  </a>
+              </Col>
+              <Col span={6}>
+                  <a href="link to your LinkedIn">
+                      <img src="linkedin icon" alt="LinkedIn" />
+                  </a>
+              </Col>
+              <Col span={6}>
+                  <Button onClick={() => { /* Copy link to clipboard */ }}>
+                      Copy Link
+                  </Button>
+              </Col>
+          </Row>
+      </Modal>
+       </>
+
     );
 };
 
 export default FieldForm;
+

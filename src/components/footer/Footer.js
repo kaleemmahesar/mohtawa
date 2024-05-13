@@ -26,7 +26,7 @@ const Footer = () => {
                         <div className='social-links'>
                             <ul>
                                 <li><a href=''><img src={instaGram} /><span>Instagram</span></a></li>
-                                <li><a href=''><img src={discard} /><span>Discard</span></a></li>
+                                <li><a href=''><img src={discard} /><span>Discord</span></a></li>
                                 <li><a href=''><img src={tikTok} /><span>TikTok</span></a></li>
                                 <li><a href=''><img src={faceBook} /><span>Facebook</span></a></li>
                                 <li><a href=''><img src={twiTter} /><span>Twitter</span></a></li>
