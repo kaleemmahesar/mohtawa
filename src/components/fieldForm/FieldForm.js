@@ -1,6 +1,10 @@
 import React, {useState} from 'react';
 import { Form, Input, Button, Modal, Row, Col } from 'antd';
 import axios from 'axios';
+import whtasapp from '../../assets/img/icons/whatsapp.png'
+import insta from '../../assets/img/icons/insta.png'
+import linkedin from '../../assets/img/icons/linkedin.png'
+
 
 const FieldForm = () => {
 
@@ -51,7 +55,6 @@ const FieldForm = () => {
         >
             <Form.Item
                 name="email"
-                label="E-mail"
                 rules={[
                     {
                         trigger: 'onBlur',
@@ -70,32 +73,41 @@ const FieldForm = () => {
             </Form.Item>
         </Form>
           <Modal
-          title="Thank you for joining Mo7tawa's waitlist"
+          title="Thank you for joining Mo7tawa's waitlist!"
           visible={showModal}
           onCancel={handleModalClose}
           footer={null}
       >
-          <p>Invite your friends to join:</p>
+          <p>Invite your friends to join too</p>
           <Row gutter={[16, 16]}>
-              <Col span={6}>
-                  <a href="link to your Instagram">
-                      <img src="instagram icon" alt="Instagram" />
+              <Col span={24}>
+                <ul className='social'>
+                    <li>
+                    <a href="#">
+                      <img src={whtasapp} alt="whatsApp" title='Share on WhatsApp' />
                   </a>
-              </Col>
-              <Col span={6}>
-                  <a href="link to your Facebook">
-                      <img src="facebook icon" alt="Facebook" />
+                    </li>
+                    <li>
+                    <a href="#">
+                      <img src={insta} alt="Insta" title="Share on Instagram" />
                   </a>
-              </Col>
-              <Col span={6}>
-                  <a href="link to your LinkedIn">
-                      <img src="linkedin icon" alt="LinkedIn" />
+                    </li>
+                    <li>
+                    <a href="#">
+                      <img src={linkedin} alt="LinkedIn" title="Share on LinkedIn" />
                   </a>
-              </Col>
-              <Col span={6}>
-                  <Button onClick={() => { /* Copy link to clipboard */ }}>
+                    </li>
+                    <li>
+                    <Button onClick={() => { /* Copy link to clipboard */ }}>
                       Copy Link
                   </Button>
+                    </li>
+                </ul>
+                  
+              </Col>
+              
+              <Col span={24}>
+                  
               </Col>
           </Row>
       </Modal>

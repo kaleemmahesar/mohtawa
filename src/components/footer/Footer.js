@@ -3,7 +3,7 @@ import Container from '../container/Container'
 import { Col, Row } from 'react-bootstrap';
 import logo from '../../assets/img/icons/white-logo.png'
 import instaGram from '../../assets/img/icons/Instagram - Negative.png'
-import discard from '../../assets/img/icons/Group 1707478963.png'
+import discord from '../../assets/img/icons/Group 1707478963.png'
 import tikTok from '../../assets/img/icons/Group 1707478964.png'
 import faceBook from '../../assets/img/icons/Facebook-Negative.png'
 import twiTter from '../../assets/img/icons/Twitter - Negative.png'
@@ -26,10 +26,10 @@ const Footer = () => {
                         <div className='social-links'>
                             <ul>
                                 <li><a href=''><img src={instaGram} /><span>Instagram</span></a></li>
-                                <li><a href=''><img src={discard} /><span>Discord</span></a></li>
-                                <li><a href=''><img src={tikTok} /><span>TikTok</span></a></li>
+                                <li><a href=''><img src={discord} /><span>Discord</span></a></li>
+                                {/* <li><a href=''><img src={tikTok} /><span>TikTok</span></a></li>
                                 <li><a href=''><img src={faceBook} /><span>Facebook</span></a></li>
-                                <li><a href=''><img src={twiTter} /><span>Twitter</span></a></li>
+                                <li><a href=''><img src={twiTter} /><span>Twitter</span></a></li> */}
                             </ul>
                         </div>
                     </Col>
