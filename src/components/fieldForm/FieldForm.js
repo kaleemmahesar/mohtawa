@@ -4,6 +4,7 @@ import axios from 'axios';
 import whtasapp from '../../assets/img/icons/whatsapp.png'
 import insta from '../../assets/img/icons/insta.png'
 import linkedin from '../../assets/img/icons/linkedin.png'
+import linkicon from '../../assets/img/icons/link.png'
 
 
 const FieldForm = () => {
@@ -98,12 +99,18 @@ const FieldForm = () => {
                   </a>
                     </li>
                     <li>
-                    <Button onClick={() => { /* Copy link to clipboard */ }}>
-                      Copy Link
-                  </Button>
+                    
                     </li>
                 </ul>
-                  
+                <div className='field-box'>
+                          <p>
+                            <b><img src={linkicon} alt='linkicon' /></b>
+                            <span>www.mo7tawa.me</span>
+                          </p>
+                          <Button type="primary" >
+                          Copy Link
+                         </Button>
+                        </div>
               </Col>
               
               <Col span={24}>
