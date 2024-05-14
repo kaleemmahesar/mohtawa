@@ -45,7 +45,18 @@ const FieldForm = () => {
         }
         return Promise.reject('Please input valid email address!');
     };
-
+  const copyToClipboard = () => {
+        const textToCopy = 'www.mo7tawa.me';
+        navigator.clipboard.writeText(textToCopy)
+          .then(() => {
+            console.log('Text copied to clipboard:', textToCopy);
+            // Optionally, you can show a success message to the user
+          })
+          .catch(err => {
+            console.error('Unable to copy text to clipboard:', err);
+            // Optionally, you can show an error message to the user
+          });
+      }
     return (
         <>
         <Form
@@ -107,7 +118,7 @@ const FieldForm = () => {
                             <b><img src={linkicon} alt='linkicon' /></b>
                             <span>www.mo7tawa.me</span>
                           </p>
-                          <Button type="primary" >
+                          <Button onClick={copyToClipboard} type="primary" >
                           Copy Link
                          </Button>
                         </div>

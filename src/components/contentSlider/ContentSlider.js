@@ -24,13 +24,25 @@ import 'swiper/css/autoplay'
 
 const ContentSlider = () => {
 
-    const [carouselPaused, setCarouselPaused] = useState(false);
+    // const [carouselPaused, setCarouselPaused] = useState(false);
+    // const [carouselAllowedToMove, setCarouselAllowedToMove] = useState(true);
 
-    const handleVideoClick = () => {
+    // const handleVideoClick = () => {
+    //     setCarouselPaused(true);
+    //     setCarouselAllowedToMove(false);
+    // };
+    const [carouselPaused, setCarouselPaused] = useState(false);
+    const [carouselAllowedToMove, setCarouselAllowedToMove] = useState(true);
+
+    const handleVideoPlay = () => {
         setCarouselPaused(true);
-        
+        setCarouselAllowedToMove(false);
     };
 
+    const handleVideoPause = () => {
+        setCarouselPaused(false);
+        setCarouselAllowedToMove(true);
+    };
     return (
         <div className='content-slider'>
         <Container>
@@ -40,15 +52,27 @@ const ContentSlider = () => {
                 </Col>
                 <Col lg={12}>
                     <Swiper
+                        // modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+                        // spaceBetween={24}
+                        // slidesPerView={2.65}
+                        // pagination={{ clickable:  carouselAllowedToMove ? true: false }}
+                        // scrollbar={{ draggable: true }}
+                        // navigation={{ disabled: !carouselAllowedToMove }} 
+                        // autoplay={!carouselPaused  && carouselAllowedToMove? {
+                        //     delay: 2500,
+                        //     disableOnInteraction: false,
+                        // } : false}
                         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
                         spaceBetween={24}
                         slidesPerView={2.65}
-                        pagination={{ clickable: true }}
+                        pagination={{ clickable: carouselAllowedToMove }}
                         scrollbar={{ draggable: true }}
-                        autoplay={!carouselPaused ? {
+                        navigation={{ disabled: !carouselAllowedToMove }}
+                        autoplay={!carouselPaused && carouselAllowedToMove ? {
                             delay: 2500,
                             disableOnInteraction: false,
                         } : false}
+                       
                         breakpoints={{
                             100: {
                               slidesPerView: 1,
@@ -62,20 +86,24 @@ const ContentSlider = () => {
                         }}
                     >
                         <SwiperSlide>
-                            <div className='img-cover' onClick={handleVideoClick}>
+                            <div className='img-cover' >
                                 <ReactPlayer
                                     url='https://www.youtube.com/shorts/RPttANcC6kE'
                                     width={'100%'}
                                     height={'100%'}
+                                    // controls={true}
+                                    // playing={false}
                                     controls={true}
                                     playing={false}
+                                    onPlay={handleVideoPlay}
+                                    onPause={handleVideoPause}
                                 />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className='img-cover' onClick={handleVideoClick}>
+                            <div className='img-cover' >
                                 <ReactPlayer
-                                    url='https://www.youtube.com/shorts/RPttANcC6kE'
+                                    url='https://www.youtube.com/shorts/-T2RJhn_saE'
                                     width={'100%'}
                                     height={'100%'}
                                     controls={true}
@@ -84,9 +112,9 @@ const ContentSlider = () => {
                             </div>
                         </SwiperSlide>
                          <SwiperSlide>
-                            <div className='img-cover' onClick={handleVideoClick}>
+                            <div className='img-cover' >
                                 <ReactPlayer
-                                    url='https://www.youtube.com/shorts/RPttANcC6kE'
+                                    url='https://www.youtube.com/shorts/VTF8Cy-K6eg'
                                     width={'100%'}
                                     height={'100%'}
                                     controls={true}
@@ -95,9 +123,9 @@ const ContentSlider = () => {
                             </div>
                         </SwiperSlide> 
                         <SwiperSlide>
-                            <div className='img-cover' onClick={handleVideoClick}>
+                            <div className='img-cover' >
                                 <ReactPlayer
-                                    url='https://www.youtube.com/shorts/RPttANcC6kE'
+                                    url='https://www.youtube.com/shorts/PXXoI-vObFI'
                                     width={'100%'}
                                     height={'100%'}
                                     controls={true}
@@ -105,9 +133,9 @@ const ContentSlider = () => {
                                 />
                             </div>
                         </SwiperSlide> <SwiperSlide>
-                            <div className='img-cover' onClick={handleVideoClick}>
+                            <div className='img-cover' >
                                 <ReactPlayer
-                                    url='https://www.youtube.com/shorts/RPttANcC6kE'
+                                    url='https://www.youtube.com/shorts/xk-tL2Q2oX4'
                                     width={'100%'}
                                     height={'100%'}
                                     controls={true}
@@ -115,9 +143,9 @@ const ContentSlider = () => {
                                 />
                             </div>
                         </SwiperSlide> <SwiperSlide>
-                            <div className='img-cover' onClick={handleVideoClick}>
+                            <div className='img-cover' >
                                 <ReactPlayer
-                                    url='https://www.youtube.com/shorts/RPttANcC6kE'
+                                    url='https://www.youtube.com/shorts/WJOwPe_YTzQ'
                                     width={'100%'}
                                     height={'100%'}
                                     controls={true}
@@ -125,9 +153,9 @@ const ContentSlider = () => {
                                 />
                             </div>
                         </SwiperSlide> <SwiperSlide>
-                            <div className='img-cover' onClick={handleVideoClick}>
+                            <div className='img-cover' >
                                 <ReactPlayer
-                                    url='https://www.youtube.com/shorts/RPttANcC6kE'
+                                    url='https://www.youtube.com/shorts/bj8cwbbFS24'
                                     width={'100%'}
                                     height={'100%'}
                                     controls={true}
@@ -135,9 +163,9 @@ const ContentSlider = () => {
                                 />
                             </div>
                         </SwiperSlide> <SwiperSlide>
-                            <div className='img-cover' onClick={handleVideoClick}>
+                            <div className='img-cover' >
                                 <ReactPlayer
-                                    url='https://www.youtube.com/shorts/RPttANcC6kE'
+                                    url='https://www.youtube.com/shorts/WAQP4P7IDOQ'
                                     width={'100%'}
                                     height={'100%'}
                                     controls={true}
@@ -145,7 +173,7 @@ const ContentSlider = () => {
                                 />
                             </div>
                         </SwiperSlide> <SwiperSlide>
-                            <div className='img-cover' onClick={handleVideoClick}>
+                            <div className='img-cover' >
                                 <ReactPlayer
                                     url='https://www.youtube.com/shorts/RPttANcC6kE'
                                     width={'100%'}
