@@ -95,17 +95,23 @@ const FieldForm = () => {
               <Col span={24}>
                 <ul className='social'>
                     <li>
-                    <a href="#">
+                    {/* <a href="#"> */}
+                    <a href="https://wa.me/?text=mo7tawa@gmail.com" target="_blank" rel="noopener noreferrer">
+       
                       <img src={whtasapp} alt="whatsApp" title='Share on WhatsApp' />
                   </a>
                     </li>
                     <li>
                     <a href="#">
+                    {/* <a href="https://www.instagram.com/your_username/" target="_blank" rel="noopener noreferrer"> */}
+      
                       <img src={insta} alt="Insta" title="Share on Instagram" />
                   </a>
                     </li>
                     <li>
                     <a href="#">
+                    {/* <a href="https://www.linkedin.com/in/your_username/" target="_blank" rel="noopener noreferrer"> */}
+      
                       <img src={linkedin} alt="LinkedIn" title="Share on LinkedIn" />
                   </a>
                     </li>
