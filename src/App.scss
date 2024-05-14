@@ -53,6 +53,12 @@ img {
 .footer {
     position: relative;
     z-index: 1;
+    .container {
+        @media screen and (max-width: 1023px) {  
+            padding-left: 32px;
+            padding-right: 32px;
+        }
+    }
     .footer-logo {
         @media screen and (max-width: 1023px) {  
             float: left;
@@ -101,23 +107,23 @@ img {
             margin-left: 40px;
             margin-right: 7%;
             @media screen and (max-width: 1023px) { 
-                max-width: 455px;
+                max-width: 85%;
                 padding-left: 15px;
                 float: left;
                 margin: 0;
                 p {
                     text-align: left;
+                    font-size: 15px;
                 }
             }
             @media screen and (max-width: 560px) { 
-                max-width: 300px;
+                max-width: 75%;
                 p {
                     font-size: 14px;
                 }
                 
             }
             @media screen and (max-width: 399px) { 
-                max-width: 250px;
                 p {
                     font-size: 12px;
                 }
