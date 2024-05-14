@@ -68,10 +68,7 @@ const ContentSlider = () => {
                         pagination={{ clickable: carouselAllowedToMove }}
                         scrollbar={{ draggable: true }}
                         navigation={{ disabled: !carouselAllowedToMove }}
-                        autoplay={!carouselPaused && carouselAllowedToMove ? {
-                            delay: 2500,
-                            disableOnInteraction: false,
-                        } : false}
+                        autoplay={ false}
                        
                         breakpoints={{
                             100: {

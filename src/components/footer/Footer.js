@@ -25,8 +25,8 @@ const Footer = () => {
                         </div>
                         <div className='social-links'>
                             <ul>
-                                <li><a href=''><img src={instaGram} /><span>Instagram</span></a></li>
-                                <li><a href=''><img src={discord} /><span>Discord</span></a></li>
+                                <li><a href='https://www.instagram.com/createmo7tawa'  target="_blank"><img src={instaGram} /><span>Instagram</span></a></li>
+                                <li><a href='https://discord.gg/kqfv5jjb'  target="_blank"><img src={discord} /><span>Discord</span></a></li>
                                 {/* <li><a href=''><img src={tikTok} /><span>TikTok</span></a></li>
                                 <li><a href=''><img src={faceBook} /><span>Facebook</span></a></li>
                                 <li><a href=''><img src={twiTter} /><span>Twitter</span></a></li> */}
@@ -34,7 +34,7 @@ const Footer = () => {
                         </div>
                     </Col>
                     <Col lg={12} className='copyright ant-cols'>
-                        <p align='center'>© TM 2024. AlIl rights reserved.<a href=''>Privacy Policy</a></p>
+                        <p align='center'>© TM 2024. AlIl rights reserved.</p>
                     </Col>
                 </Row>
             </Container>
