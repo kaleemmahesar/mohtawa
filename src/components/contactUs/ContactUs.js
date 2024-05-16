@@ -9,7 +9,7 @@ const ContactUs = () => {
 
 const handleEmailClick = () => {
 
-    window.open('mailto:mailto:Info@mo7tawa.me?subject=Subject&body=Body%20goes%20here')
+    window.open('mailto:mailto:Info@mo7tawa.me?subject=&body=')
    
   };
 
