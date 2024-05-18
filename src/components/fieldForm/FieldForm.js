@@ -5,14 +5,26 @@ import whtasapp from '../../assets/img/icons/whatsapp.png'
 import insta from '../../assets/img/icons/insta.png'
 import linkedin from '../../assets/img/icons/linkedin.png'
 import linkicon from '../../assets/img/icons/link.png'
+import { css } from '@emotion/react';
+import FullScreenLoader from '../FullScreenLoader/FullScreenLoader';
+
+
+const override = css`
+    display: block;
+    margin: 0 auto;
+`;
 
 
 const FieldForm = () => {
 
     const [form] = Form.useForm();
     const [showModal, setShowModal] = useState(false);
+    const [loading, setLoading] = useState(false); 
+
+
 
     const onFinish = async (values) => {
+        setLoading(true); 
         const data = {
             email: values.email
         };
@@ -20,11 +32,13 @@ const FieldForm = () => {
         axios.post('https://sheet.best/api/sheets/860ebffe-b0e8-4d79-ad03-9192df83c83b', data)
             .then((res) => {
                 // console.log('Response:', res);
+                setLoading(false); 
                 setShowModal(true); 
                 form.resetFields();
             })
             .catch((err) => {
                 // console.log('Error:', err);
+                setLoading(false); 
             });
     };
 
@@ -50,11 +64,9 @@ const FieldForm = () => {
         navigator.clipboard.writeText(textToCopy)
           .then(() => {
             console.log('Text copied to clipboard:', textToCopy);
-            // Optionally, you can show a success message to the user
           })
           .catch(err => {
             console.error('Unable to copy text to clipboard:', err);
-            // Optionally, you can show an error message to the user
           });
       }
     return (
@@ -82,8 +94,10 @@ const FieldForm = () => {
                 <Button type="primary" htmlType="submit">
                     Secure Your Spot
                 </Button>
+                
             </Form.Item>
         </Form>
+        <FullScreenLoader loading={loading} />
           <Modal
           title="Thank you for joining Mo7tawa's waitlist!"
           visible={showModal}
